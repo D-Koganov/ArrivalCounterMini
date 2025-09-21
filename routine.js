@@ -2,10 +2,6 @@ var dnow = new Date();
 dnow.setHours(8); //setting hours, 'cause we want only days
 var devent = new Date(2025, 8, 30, 9); //months start from 0
 
-function setGoodToGoColor() {
-    var body = document.querySelector("body");
-    body.style = "background-color:hsl(120, 100%, 90%)";
-}
 
 //var secondsPast = Math.round( (dnow.getTime() - devent.getTime())/1000 ); //more simple way to do it, but...
 function calcDaysAndMonths(dnow, devent) {
@@ -50,10 +46,20 @@ function calcDaysAndMonths(dnow, devent) {
     }
 }
 
+
 var months_n_days = calcDaysAndMonths(devent, dnow)
-if (months_n_days[0]<=1) setGoodToGoColor();
-document.getElementById('monthsPast').innerText = months_n_days[0];
-document.getElementById('daysPast').innerText = months_n_days[1];
+var months = months_n_days[0];
+var days = months_n_days[1];
+
+
+var body = document.querySelector("body");
+if (months <= 0 && days <= 0) {
+    body.style = "background-color:hsl(120, 100%, 90%)";
+} else if (months <= 0) {
+    body.style = "background-color:hsl(60, 55%, 55%)";
+}
+
+document.getElementById('monthsPast').innerText = months;
+document.getElementById('daysPast').innerText = days;
 
 //document.getElementById('lastDate').innerText = dexpectedMinimum.toDateString();
-
