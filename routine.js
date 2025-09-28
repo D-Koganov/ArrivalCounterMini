@@ -54,9 +54,7 @@ var days = months_n_days[1];
 
 var body = document.querySelector("body");
 if (months <= 0 && days <= 0) {
-    body.style = "background-color:hsl(120, 100%, 90%)";
-} else if (months <= 0) {
-    body.style = "background-color:hsl(60, 55%, 55%)";
+    body.style = "background-color: #800080";
 }
 
 document.getElementById('monthsPast').innerText = months;
