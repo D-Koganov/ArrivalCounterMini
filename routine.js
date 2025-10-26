@@ -74,7 +74,10 @@ var difference = (dnow >= devent) ? {months : 0, days : 0} : calculateDatesDiffe
 document.getElementById('monthsPast').innerText = difference.months;
 document.getElementById('daysPast').innerText = difference.days;
 
-
+if (difference.months == 0 && difference.days == 0) {
+    var body = document.querySelector("body");
+    body.style = "background-color: #800080";
+}
 
 
 /*
