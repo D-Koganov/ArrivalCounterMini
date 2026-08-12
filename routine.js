@@ -1,6 +1,6 @@
 var dnow = new Date();
 dnow.setHours(8); //setting hours, 'cause we want only days
-var devent = new Date(2026, 5, 6, 8); //months start from 0
+var devent = new Date(2026, 7, 30, 8); //months start from 0
 
 var DEBUG = false;
 
